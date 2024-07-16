@@ -1,0 +1,37 @@
+The code is designed to fit 12 distinct shapes, each made up of 5 square units, into an 8x8 grid while leaving a 2x2 space in the middle of the grid. The solution uses a backtracking algorithm to achieve this.
+
+## Step-by-step Explanation:
+
+1. **Define the Shapes**:
+   The shapes are defined as lists of coordinate tuples, where each tuple represents the position of a square relative to the top-left corner of the shape.
+
+2. **Check if a Shape Can Be Placed**:
+   The `can_place` function checks if a shape can be placed at a specified position on the board. It ensures that the placement is within the bounds of the board and that the cells where the shape will be placed are empty.
+
+3. **Place a Shape**:
+   The `place_shape` function places a shape on the board at a specified position by setting the corresponding cells to a given value (the shape's index + 1).
+
+4. **Remove a Shape**:
+   The `remove_shape` function removes a shape from the board by resetting the corresponding cells to 0.
+
+5. **Backtracking Algorithm**:
+   The `solve` function implements the backtracking algorithm to place all the shapes on the board. It iterates through each cell on the board, trying to place the current shape at each position. If a shape can be placed, it recursively attempts to place the next shape. If placing a shape results in a dead-end (no valid position for the next shape), it backtracks by removing the shape and trying the next position.
+
+6. **Initialize the Board**:
+   The board is initialized as an 8x8 grid filled with zeros. The 2x2 space in the middle is marked with -1 to indicate it is unavailable for placing shapes.
+
+7. **Solve the Puzzle**:
+   The `solve` function is called to attempt to fit all the shapes on the board. If a solution is found, it prints "Solution found," otherwise, it prints "No solution found."
+
+8. **Plot the Solution**:
+   If a solution is found, the board is visualized using `matplotlib`. Each shape is colored uniquely using a colormap. The grid lines are drawn for clarity, and the axis labels are removed.
+
+The backtracking algorithm is a brute-force search method that tries every possible way to fit the shapes into the grid. It is efficient enough for this problem size and guarantees finding a solution if one exists.
+
+The main components of the code include:
+- Shape definitions
+- Placement and removal functions
+- Backtracking solver
+- Board initialization and visualization
+
+This approach ensures that all pieces are placed without overlapping and that the 2x2 center space remains blank.
