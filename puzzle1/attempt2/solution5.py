@@ -61,7 +61,7 @@ def plot_board(board, ax):
     ax.set_yticks(np.arange(-.5, 8, 1))
     ax.set_xticklabels([])
     ax.set_yticklabels([])
-    plt.pause(0.5)
+    plt.pause(0.0001)
 
 def has_valid_empty_spaces(board):
     empty_space_mask = (board == 0).astype(int)

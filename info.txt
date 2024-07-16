@@ -1,0 +1,3 @@
+
+to activate env go to the dir with venv in it
+go into the terminal in this directory and 'source venv/bin/activate'
