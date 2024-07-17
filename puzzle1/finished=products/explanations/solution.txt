@@ -1,0 +1,62 @@
+# Explanation of the code
+explanation = """
+This code attempts to solve a puzzle by placing various shapes on an 8x8 board,
+considering all possible rotations and reflections of each shape. The goal is to
+fill the board completely, except for a 2x2 center block, which is marked as occupied.
+The script also measures the time taken and the number of attempts to find a solution.
+The steps are as follows:
+
+1. Define Shapes:
+   - The code starts by defining a list of shapes. Each shape is represented as a list of coordinates,
+     where each coordinate is a tuple (x, y).
+
+2. Rotate and Mirror Functions:
+   - Two functions, `rotate` and `mirror`, are defined to generate rotated and mirrored versions of a shape.
+   - The `rotate` function rotates the shape 90 degrees clockwise.
+   - The `mirror` function mirrors the shape horizontally.
+
+3. Generate All Rotations and Mirrors:
+   - The function `generate_all_rotations_and_mirrors` takes a shape and generates all possible rotations
+     and mirrored versions of that shape.
+   - This ensures that all unique transformations of a shape are considered.
+
+4. Expand Shapes to Include All Variants:
+   - The list `all_shapes` is created to store all possible rotations and mirrored versions for each shape.
+   - This is done by applying the `generate_all_rotations_and_mirrors` function to each shape.
+
+5. Board Placement Functions:
+   - The `can_place` function checks if a shape can be placed at a specified position (x, y) on the board
+     without overlapping existing shapes or going out of bounds.
+   - The `place_shape` function places a shape on the board at the specified position.
+   - The `remove_shape` function removes a shape from the board at the specified position.
+
+6. Check for Valid Empty Spaces:
+   - The `has_valid_empty_spaces` function checks if the empty spaces on the board are valid.
+   - It uses the `measurements.label` function to label connected components of empty spaces.
+   - Each connected component of empty spaces must be a multiple of 5 to ensure that shapes can be placed there.
+
+7. Solve the Puzzle:
+   - The `solve` function attempts to solve the puzzle by recursively placing shapes on the board.
+   - It starts with the first shape and tries to place it in every possible position, considering all rotations
+     and mirrors.
+   - If a shape can be placed, it proceeds to the next shape. If not, it backtracks and tries the next position.
+   - This process continues until all shapes are placed on the board or all possibilities are exhausted.
+
+8. Initialize the Board:
+   - The board is initialized as an 8x8 array filled with zeros.
+   - The 2x2 center block is marked as occupied by setting its values to -1.
+
+9. Measure Time and Attempts:
+   - The number of attempts to place the shapes is counted using a global variable `attempts`.
+   - The time taken to find a solution is measured using `time.time()`.
+
+10. Display the Solution:
+    - If a solution is found, the final board configuration is displayed using `matplotlib`.
+    - The solution includes a plot of the board with shapes placed, the time taken, and the number of attempts.
+    - If no solution is found, a message is printed indicating that no solution was found.
+
+"""
+
+# Write the explanation to a text file
+with open("puzzle_explanation.txt", "w") as file:
+    file.write(explanation)

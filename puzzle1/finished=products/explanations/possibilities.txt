@@ -1,0 +1,40 @@
+# Write the explanation to a text file
+explanation = """
+This code calculates the total number of possible combinations of shapes on a board,
+considering all rotations and reflections of each shape. The steps are as follows:
+
+1. Define Shapes:
+   - The code starts by defining a list of shapes. Each shape is represented as a list of coordinates,
+     where each coordinate is a tuple (x, y).
+
+2. Rotate and Mirror Functions:
+   - Two functions, `rotate` and `mirror`, are defined to generate rotated and mirrored versions of a shape.
+   - The `rotate` function rotates the shape 90 degrees clockwise.
+   - The `mirror` function mirrors the shape horizontally.
+
+3. Generate All Rotations and Mirrors:
+   - The function `generate_all_rotations_and_mirrors` takes a shape and generates all possible rotations
+     and mirrored versions of that shape.
+   - It ensures that duplicate shapes (shapes that look the same after rotation or mirroring) are removed
+     by using a set to store unique shapes.
+
+4. Expand Shapes to Include All Variants:
+   - The list `all_shapes` is created to store all possible rotations and mirrored versions for each shape.
+   - This is done by applying the `generate_all_rotations_and_mirrors` function to each shape.
+
+5. Calculate Total Combinations:
+   - The total number of possible combinations is calculated by multiplying the number of variants for each shape.
+   - This is done using a loop that iterates over the list `all_shapes`, and for each shape, it multiplies
+     the total number of combinations by the number of variants of that shape.
+
+6. Print the Result:
+   - Finally, the total number of possible combinations is printed.
+
+The code does not attempt to place the shapes on the board; it simply counts the number of possible configurations
+of the shapes themselves, considering all their rotations and reflections.
+
+"""
+
+# Write the explanation to a text file
+with open("explanation.txt", "w") as file:
+    file.write(explanation)
