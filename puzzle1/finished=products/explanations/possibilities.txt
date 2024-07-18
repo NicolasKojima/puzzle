@@ -1,5 +1,5 @@
 # Write the explanation to a text file
-explanation = """
+
 This code calculates the total number of possible combinations of shapes on a board,
 considering all rotations and reflections of each shape. The steps are as follows:
 
@@ -32,9 +32,3 @@ considering all rotations and reflections of each shape. The steps are as follow
 
 The code does not attempt to place the shapes on the board; it simply counts the number of possible configurations
 of the shapes themselves, considering all their rotations and reflections.
-
-"""
-
-# Write the explanation to a text file
-with open("explanation.txt", "w") as file:
-    file.write(explanation)

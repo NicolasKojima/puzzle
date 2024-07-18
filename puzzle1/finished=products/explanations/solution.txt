@@ -1,5 +1,5 @@
 # Explanation of the code
-explanation = """
+
 This code attempts to solve a puzzle by placing various shapes on an 8x8 board,
 considering all possible rotations and reflections of each shape. The goal is to
 fill the board completely, except for a 2x2 center block, which is marked as occupied.
@@ -41,6 +41,7 @@ The steps are as follows:
      and mirrors.
    - If a shape can be placed, it proceeds to the next shape. If not, it backtracks and tries the next position.
    - This process continues until all shapes are placed on the board or all possibilities are exhausted.
+   - This is basically a very fundamental Depth First Search (DFS) at a much more complex level
 
 8. Initialize the Board:
    - The board is initialized as an 8x8 array filled with zeros.
@@ -55,8 +56,3 @@ The steps are as follows:
     - The solution includes a plot of the board with shapes placed, the time taken, and the number of attempts.
     - If no solution is found, a message is printed indicating that no solution was found.
 
-"""
-
-# Write the explanation to a text file
-with open("puzzle_explanation.txt", "w") as file:
-    file.write(explanation)

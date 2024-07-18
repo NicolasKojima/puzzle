@@ -1,5 +1,5 @@
 # Explanation of the code with differences emphasized
-explanation = """
+
 This code attempts to solve a puzzle by placing various shapes on an 8x8 board,
 considering all possible rotations and reflections of each shape. The goal is to
 fill the board completely, except for a 2x2 center block, which is marked as occupied.
@@ -7,24 +7,49 @@ The script also measures the time taken and the number of attempts to find a sol
 The steps are as follows:
 
 1. Define Shapes:
-   - The code starts by defining a list of shapes. Each shape is represented as a list of coordinates,
-     where each coordinate is a tuple (x, y).
-
+ 
 2. Rotate and Mirror Functions:
-   - Two functions, `rotate` and `mirror`, are defined to generate rotated and mirrored versions of a shape.
-   - The `rotate` function rotates the shape 90 degrees clockwise.
-   - The `mirror` function mirrors the shape horizontally.
 
 3. Generate All Rotations and Mirrors:
-   - The function `generate_all_rotations_and_mirrors` takes a shape and generates all possible rotations
-     and mirrored versions of that shape.
-   - This ensures that all unique transformations of a shape are considered.
 
 4. Expand Shapes to Include All Variants:
-   - The list `all_shapes` is created to store all possible rotations and mirrored versions for each shape.
-   - This is done by applying the `generate_all_rotations_and_mirrors` function to each shape.
 
 5. Board Placement Functions:
-   - The `can_place` function checks if a shape can be placed at a specified position (x, y) on the board
-     without overlapping existing shapes or going out of bounds.
-   - The `place_shape` function places a shape on the board at the specified position
+
+6. Check for Valid Empty Spaces:
+
+7. Solve the Puzzle:
+
+8. Initialize the Board:
+
+9. Create a Custom Colormap:
+   - A custom colormap (`custom_cmap`) is created using `plt.cm.tab20`, where the first color is set to white
+     to represent unfilled spaces, and the second color is set to black to represent the center block.
+   
+10. Visualize the Board:
+    - The `plot_board` function visualizes the board at each step where shapes are placed.
+    - The center 2x2 block is always set to -1 (black) before plotting.
+
+11. Measure Time and Attempts:
+
+12. Display the Solution:
+
+
+Differences from Previous Code:
+1. **Visualization Update**: 
+   - The `plot_board` function now ensures that the center 2x2 block is black, and uses a custom colormap to set
+     the background of unfilled units to white.
+
+2. **Custom Colormap**: 
+   - The custom colormap is created such that the first color is white (for unfilled spaces) and the second color 
+     is black (for the center block). This was not present in the previous code.
+
+3. **Reduced Delay for Visualization**: 
+   - The delay in the `plt.pause()` function is reduced to 0.0001 seconds for faster visualization of the solving 
+     process.
+
+4. **Explicit Handling of Center Block**:
+   - The `plot_board` function explicitly sets the center 2x2 block to -1 before plotting, ensuring it is always
+     displayed as black.
+
+The results of the step by step algorithm takes a total of 2451.8087 seconds to reach the same conclusion with the same attempts of 57469
